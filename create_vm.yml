@@ -1,9 +1,25 @@
 - name: Create Azure Resources
   hosts: all
   tasks:
-  - name: Create Azure Deploy
-    azure_rm_deployment:
-      state: present
-      resource_group_name: arm_template-rg
-      template_link: 'https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-simple-linux/azuredeploy.json'
-      parameters_link: 'https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-simple-linux/azuredeploy.parameters.json'
+    - name: Create Azure Deploy
+      azure_rm_deployment:
+        state: present
+        subscription_id: 3c039435-8d20-436c-b398-b1c5c714e0a3
+        resource_group_name: arm_template-rg
+        parameters:
+          newStorageAccountName:
+            value: devopsclestorage1
+          adminUsername:
+            value: devopscle
+          dnsNameForPublicIP:
+            value: devopscleazure
+          location:
+            value: West US
+          vmSize:
+            value: Standard_A2
+          vmName:
+            value: ansibleSshVm
+          sshKeyData:
+            value: YOUR_SSH_PUBLIC_KEY
+        template_link: 'https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-sshkey/azuredeploy.json'
+      register: azure
