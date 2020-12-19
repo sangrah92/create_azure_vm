@@ -19,7 +19,7 @@
             value: Standard_A2
           vmName:
             value: ansibleSshVm
-          sshKeyData:
-            value: YOUR_SSH_PUBLIC_KEY
+          adminPassword:
+            value: nihilent@123
         template_link: 'https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-sshkey/azuredeploy.json'
       register: azure
