@@ -1,8 +1,9 @@
 - name: Destroy Azure Resources
   hosts: all
   tasks:
-  - name: Destroy Azure Deploy
+  - name: Create Azure Deploy
     azure_rm_deployment:
-      state: absent
-      subscription_id: 3c039435-8d20-436c-b398-b1c5c714e0a3
+      state: present
       resource_group_name: arm_template-rg
+      template_link: 'https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-simple-linux/azuredeploy.json'
+      parameters_link: 'https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-simple-linux/azuredeploy.parameters.json'
