@@ -1,25 +1,8 @@
-- name: Create Azure Resources
+- name: Destroy Azure Resources
   hosts: all
   tasks:
-    - name: Create Azure Deploy
-      azure_rm_deployment:
-        state: present
-        subscription_id: 3c039435-8d20-436c-b398-b1c5c714e0a3
-        resource_group_name: arm_template-rg
-        parameters:
-          newStorageAccountName:
-            value: devopsclestorage1
-          adminUsername:
-            value: devopscle
-          dnsNameForPublicIP:
-            value: devopscleazure
-          location:
-            value: West US
-          vmSize:
-            value: Standard_A2
-          vmName:
-            value: ansibleSshVm
-          adminPassword:
-            value: nihilent@123
-        template_link: 'https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-sshkey/azuredeploy.json'
-      register: azure
+  - name: Destroy Azure Deploy
+    azure_rm_deployment:
+      state: absent
+      subscription_id: 3c039435-8d20-436c-b398-b1c5c714e0a3
+      resource_group_name: arm_template-rg
