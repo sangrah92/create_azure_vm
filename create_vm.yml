@@ -4,6 +4,6 @@
   - name: Create Azure Deploy
     azure_rm_deployment:
       state: present
-      resource_group_name: ansiblevm_group
+      resource_group_name: arm_template-rg
       template_link: 'https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-simple-linux/azuredeploy.json'
       parameters_link: 'https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-simple-linux/azuredeploy.parameters.json'
