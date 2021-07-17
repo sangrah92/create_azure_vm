@@ -10,9 +10,22 @@
       resource_group: AzureResources-rg
       name: 5avm4d4okvdlq4jz65404id
       type: Standard_RAGRS
-      tags:
-        testing: testing
-        delete: on-exit     
+  - name: Create a log profile
+    azure_rm_monitorlogprofile:
+      name: myProfile
+      location: centralindia
+      locations:
+        - centralindia
+      categories:
+        - Write
+        - Action
+      retention_policy:
+        enabled: True
+        days: 45
+      storage_account:
+        resource_group: AzureResources-rg
+        name: 5avm4d4okvdlq4jz65404id
+    register: output
   - name: Create virtual network
     azure_rm_virtualnetwork:
       resource_group: AzureResources-rg
