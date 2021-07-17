@@ -8,7 +8,7 @@
   - name: Create a storage account
     azure_rm_storageaccount:
       resource_group: AzureResources-rg
-      name: J6HUq8dFoRto0BQ7u4z8GTi
+      name: 5avm4d4okvdlq4jz65404id
       type: Standard_RAGRS
       tags:
         testing: testing
