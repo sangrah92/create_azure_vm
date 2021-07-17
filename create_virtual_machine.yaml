@@ -5,6 +5,11 @@
     azure_rm_resourcegroup:
       name: AzureResources-rg
       location: centralindia
+  - name: Create storage account
+    azure.azcollection.azure_rm_storageaccount:
+      resource_group: AzureResources-rg
+      name: testaccount001
+      account_type: Standard_LRS      
   - name: Create virtual network
     azure_rm_virtualnetwork:
       resource_group: AzureResources-rg
