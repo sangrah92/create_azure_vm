@@ -5,7 +5,7 @@
     azure_rm_resourcegroup:
       name: Testing
       location: centralindia
-	
+ 
   - name: Create storage account
     azure.azcollection.azure_rm_storageaccount:
       resource_group: Testing
