@@ -1,18 +1,12 @@
-  - name: Create azure virtual machine
-    hosts: all
-    tasks:
-    - name: Create resource group
-      azure_rm_resourcegroup:
-        name: Testing
-        location: centralindia
-    - name: Create storage account
-      azure.azcollection.azure_rm_storageaccount:
-        resource_group: Testing
-        name: testaccount001
-        account_type: Standard_LRS
-    - name: Create container foo
-      azure.azcollection.azure_rm_virtualnetwork:
-        resource_group: Testing
-        storage_account_name: testaccount001
-        container: foo
-        public_access: container
+- name: Create Azure Resources
+  hosts: all
+  tasks:
+  - name: Create resource group
+    azure_rm_resourcegroup:
+      name: AzureResources-rg
+      location: centralindia
+  - name: Create a storage account
+    azure_rm_storageaccount:
+      resource_group: AzureResources-rg
+      name: 5avm4d4okvdlq4jz65404id
+      type: Standard_RAGRS
