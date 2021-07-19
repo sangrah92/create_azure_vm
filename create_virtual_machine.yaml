@@ -5,14 +5,3 @@
       azure_rm_resourcegroup:
         name: Testing
         location: centralindia
-    - name: Create storage account
-      azure.azcollection.azure_rm_storageaccount:
-        resource_group: Testing
-        name: testaccount001
-        account_type: Standard_LRS
-    - name: Create container foo
-      azure_rm_storageblob:
-        resource_group: Testing
-        storage_account_name: testaccount001
-        container: foo
-        public_access: container
