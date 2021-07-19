@@ -5,11 +5,6 @@
     azure_rm_resourcegroup:
       name: AzureResources-rg
       location: centralindia
-  - name: Create a storage account
-    azure_rm_storageaccount:
-      resource_group: AzureResources-rg
-      name: 5avm4d4okvdlq4jz65404id
-      type: Standard_RAGRS
   - name: Create a log profile
     azure_rm_monitorlogprofile:
       name: myProfile
