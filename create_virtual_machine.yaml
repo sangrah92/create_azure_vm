@@ -20,7 +20,7 @@
         - Write
         - Action
       retention_policy:
-        enabled: True
+        enabled: False
         days: 45
       storage_account:
         resource_group: AzureResources-rg
